@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Login</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login-style.css') }}" />
+
+</head>
+
+<body>
+  <div class="grid_container">
+    <div class="login_box">
+      <h1> Login </h1>
+
+      <form action="" method="post">
+        <label for="user">User:</label><br>
+        <input type="text" id="username" name="username" value='{{request.form.username}}'><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value='{{request.form.password}}'><br>
+        <input type="submit" value="Login">
+      </form>
+      {% if error %}
+        <div class="error"> {{ error }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+</body>
+
+<style>
+.error {
+  padding-top: 5px;
+  padding-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+
+
+</html>

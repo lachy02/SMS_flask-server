@@ -42,3 +42,10 @@
   text-decoration: none;
   color: black;
 }
+
+.customer_table {
+  grid-column-start: 2;
+  grid-column-end:4;
+  grid-row: 4;
+
+}

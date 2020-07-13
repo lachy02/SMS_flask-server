@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Main Page</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='main-style.css') }}">
+
+
+
+</head>
+
+<body>
+
+<div class="grid_container">
+  <div class="header">
+  </div>
+
+  <div class="logout">
+    <p><a href="{{url_for('logout')}}">Logout</a></p>
+  </div>
+
+  <div class="date_container">
+    <h1>Enter Date</h1>
+    <form action="" method="post">
+      <input type="text" id="date" name="date" value='{{request.form.date}}'><br>
+      <input type="submit" value="Get">
+    </form>
+  </div>
+
+
+  <div class="customer_table">
+    {% if table %}
+      {{ table }}
+    {% endif %}
+  </div>
+
+  <div class="send">
+    <form method="get" action="/send">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+<style>
+tr:nth-child(even) {
+  background-color: #FF9999;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #FF9999;
+  font-size: 25px;
+}
+
+td {
+  font-size: 18px;
+  text-align: center;
+}
+
+
+</style>
+
+
+</html>
